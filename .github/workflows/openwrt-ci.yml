@@ -61,8 +61,13 @@ jobs:
           ./scripts/feeds update -a
           ./scripts/feeds install -a
 
-      #- name: Generate configuration file
-      #  run: make defconfig
+      - name: Generate configuration file
+        run: make defconfig
+
+      - name: Import custom configuration
+        run: |
+          cp -f ${{ github.workspace }}/.config ${{ github.workspace }}/.config.bak
+          cp -f ${{ github.workspace }}/custom/.config. ${{ github.workspace }}/.config
 
       - name: Download packages
         run: make download -j16

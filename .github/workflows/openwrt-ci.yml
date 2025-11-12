@@ -73,7 +73,7 @@ jobs:
       - name: Import custom configuration
         run: |
           cp -f ./.config ./.config.bak
-          cp -f ./custom/config. ./.config
+          cp -f ./custom/config ./.config
 
       - name: Download packages
         run: make download -j16

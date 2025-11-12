@@ -64,16 +64,16 @@ jobs:
       - name: Generate configuration file
         run: make defconfig
 
-      # - name: Show path
-      #   run: |
-      #     pwd
-      #     ls -l ./
-      #     ls -l ./custom/
+      - name: Show path
+        run: |
+          pwd
+          ls -l ./
+          ls -l ./custom/
 
       - name: Import custom configuration
         run: |
           cp -f ./.config ./.config.bak
-          cp -f ./custom/.config. ./.config
+          cp -f ./custom/config. ./.config
 
       - name: Download packages
         run: make download -j16
